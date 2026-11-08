@@ -1,3 +1,19 @@
+# Spark Plugin Catalog
+
+The `spark` branch is the catalog Spark servers read as **Spark maintained**:
+every plugin in Silo's maintained catalog, plus Spark's own plugins. `main`
+mirrors `Silo-Server/silo-plugins` untouched; `sync-and-build.sh` in
+`Joloxx9/silo-mac-build` fast-forwards it and merges it into `spark`.
+
+Spark's own plugins in this catalog:
+
+- `spark.autoscan.arr` – [spark-plugin-autoscan-arr](https://github.com/Joloxx9/spark-plugin-autoscan-arr)
+
+To add or update one, run `go run ./cmd/update-catalog -repo <owner/name> -tag <tag>`
+on `spark` and commit `manifest.json`.
+
+---
+
 # Silo Plugin Catalog
 
 Catalog metadata and helpers for first-party Silo plugins.
