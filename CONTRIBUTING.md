@@ -1,16 +1,14 @@
-# Contributing to the Silo Plugin Catalog
+# Contributing to Spark Plugin Catalog
 
-The [Silo contribution guide](https://github.com/Silo-Server/.github/blob/main/CONTRIBUTING.md)
-covers project-wide coordination, focused changes, evidence, AI disclosure, and
-pull request expectations. Those requirements apply here; this guide adds the
-catalog-specific workflow.
+The upstream [Silo contribution guide](https://github.com/Silo-Server/.github/blob/main/CONTRIBUTING.md)
+covers shared project practices. This guide adds Spark catalog-specific steps.
 
 ## Before you start
 
-Open an [issue](https://github.com/Silo-Server/silo-plugins/issues) before
+Open an [issue](https://github.com/Joloxx9/spark-plugins/issues) before
 changing catalog schema, provenance rules, release ingestion, or automation.
 Plugin implementation changes belong in the individual plugin repository;
-plugin contract changes belong in
+plugin contracts used by both servers belong in the upstream
 [`silo-plugin-sdk`](https://github.com/Silo-Server/silo-plugin-sdk).
 
 Release entries are normally generated from a plugin's published GitHub release
