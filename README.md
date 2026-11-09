@@ -8,6 +8,7 @@ mirrors `Silo-Server/silo-plugins` untouched; `sync-and-build.sh` in
 Spark's own plugins in this catalog:
 
 - `spark.autoscan.arr` – [spark-plugin-autoscan-arr](https://github.com/Joloxx9/spark-plugin-autoscan-arr)
+- `silo.watchprovider.scrob` – [silo-plugin-watchprovider-scrob-local](https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local), Spark's Scrob build
 
 To add or update one, run `go run ./cmd/update-catalog -repo <owner/name> -tag <tag>`
 on `spark` and commit `manifest.json`.

@@ -2304,6 +2304,119 @@
     },
     {
       "manifest": {
+        "plugin_id": "silo.watchprovider.scrob",
+        "version": "0.3.1",
+        "silo_api_version": "v1",
+        "supported_platforms": [
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          },
+          {
+            "os": "linux",
+            "arch": "amd64"
+          },
+          {
+            "os": "linux",
+            "arch": "arm64"
+          }
+        ],
+        "capabilities": [
+          {
+            "type": "watch_sync_provider.v1",
+            "id": "scrob",
+            "display_name": "Scrob",
+            "description": "Bidirectional watch history, resume progress, movie and series ratings, dropped shows, watchlist and live playback for a self-hosted Scrob instance.",
+            "config_schema": [
+              {
+                "key": "scrob_server",
+                "title": "Your Scrob server",
+                "description": "Connection details for the Scrob server used by this profile.",
+                "json_schema": "{\"type\":\"object\",\"properties\":{\"server_url\":{\"type\":\"string\",\"format\":\"uri\"}},\"required\":[\"server_url\"],\"additionalProperties\":false}",
+                "required": true,
+                "admin_form": {
+                  "fields": [
+                    {
+                      "key": "server_url",
+                      "label": "Server URL",
+                      "description": "Root URL of your Scrob instance, e.g. http://192.168.1.50:7330 on a LAN or https://scrob.example.com behind a reverse proxy. API paths are added automatically.",
+                      "control": 1,
+                      "placeholder": "http://192.168.1.50:7330",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ],
+            "watch_sync_provider": {
+              "auth_methods": [
+                2
+              ],
+              "export_watched": true,
+              "export_unwatched": true,
+              "import_watched": true,
+              "import_progress": true,
+              "supported_media_types": [
+                1,
+                2,
+                3
+              ],
+              "external_id_namespaces": [
+                "tmdb",
+                "imdb",
+                "tvdb"
+              ],
+              "max_batch_size": 50,
+              "import_watchlist": true,
+              "export_watchlist": true,
+              "remove_watchlist": true,
+              "scrobble_playback": true,
+              "import_ratings": true,
+              "export_ratings": true,
+              "sync_dropped": true,
+              "connection_settings": [
+                {
+                  "key": "remove_watched_movies",
+                  "label": "Remove watched movies from the Scrob watchlist",
+                  "description": "Takes a movie off the Scrob watchlist once you watch it after adding it, so Silo does not put it back on your watchlist. A movie you add again after watching it stays. Series stay listed, since new episodes can arrive.",
+                  "type": 1,
+                  "default_value": true
+                }
+              ]
+            }
+          }
+        ],
+        "category": "Watch Providers",
+        "presentation": {
+          "display_name": "Scrob Watch Provider",
+          "summary": "Sync Silo watch activity with a self-hosted Scrob instance.",
+          "description_markdown": "Imports movie and episode watch history and resume points, exports completed watches and unwatches, syncs movie and series ratings in both directions, syncs dropped shows, syncs Silo's watchlist with Scrob's native watchlist (or, on older Scrob, a list named \"Silo - Watchlist\"), syncs your other Scrob lists with Silo collections (needs a Silo build with collection sync; read-only Scrob lists, such as MDBList copies, reject edits from Silo), and reports live playback to Scrob's Now Playing. Personal build of the Silo-Community plugin, built against a plugin SDK fork that adds collection sync; stock Silo runs it without collections.",
+          "setup_markdown": "Connect a Silo profile by entering that profile's Scrob server URL and API key (from Scrob's account settings). Different profiles can use different Scrob servers.",
+          "homepage_url": "https://github.com/ellite/scrob",
+          "source_url": "https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local",
+          "support_url": "https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local/issues",
+          "changelog_url": "https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local/releases",
+          "publisher_name": "Joloxx9",
+          "publisher_url": "https://github.com/Joloxx9",
+          "license_spdx": "AGPL-3.0-only"
+        }
+      },
+      "repo_url": "https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local",
+      "checksums_url": "https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local/releases/download/v0.3.1/checksums.txt",
+      "binaries": {
+        "darwin/arm64": {
+          "url": "https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local/releases/download/v0.3.1/plugin-darwin-arm64"
+        },
+        "linux/amd64": {
+          "url": "https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local/releases/download/v0.3.1/plugin-linux-amd64"
+        },
+        "linux/arm64": {
+          "url": "https://github.com/Joloxx9/silo-plugin-watchprovider-scrob-local/releases/download/v0.3.1/plugin-linux-arm64"
+        }
+      }
+    },
+    {
+      "manifest": {
         "plugin_id": "silo.watchprovider.simkl",
         "version": "0.4.1",
         "silo_api_version": "v1",
